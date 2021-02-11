@@ -1,3 +1,7 @@
+body {
+  background-color: #eaffd0;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,58 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 50px 400px;
+}
+
+.arrows span {
+  padding: 10px;
+  color: #f38181;
+  font-size: 30px;
+}
+
+h1, h2, h3 {
+  color: #f38181;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+.session-time {
+  padding: 20px;
+  width: 200px;
+  margin: 0 835px;
+  border: 5px solid #95e1d3;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-size: 40px;
+}
+
+.player {
+  padding-top: 15px;
+  width: 200px;
+  margin: 0 870px;
+}
+
+.player span {
+  padding: 10px;
+  color: #f38181;
+  margin-left: 10px;
+}
+
+.player span i:nth-child(1) {
+  padding-right: 30px;
 }
