@@ -13,6 +13,7 @@ class App extends React.Component {
       timer: 1500,
       play: false,
       clicked: 0,
+      mode: 'Session',
     }
     this.clockify = this.clockify.bind(this);
     this.start = this.start.bind(this);
@@ -46,6 +47,7 @@ class App extends React.Component {
     } else {
       this.setState({
         timer: this.state.break,
+        mode: 'Break',
       })
     }
   }
@@ -74,6 +76,7 @@ class App extends React.Component {
       timer: 1500,
       play: false,
       clicked: 0,
+      mode: 'Session',
     })
   }
 
@@ -130,7 +133,7 @@ class App extends React.Component {
           </div>
         </div>
         <div className="session-time">
-          <h2 id="timer-label">Session</h2>
+          <h2 id="timer-label">{this.state.mode}</h2>
           <span id="time-left">{this.clockify()}</span>
         </div>
         <div className="player">
