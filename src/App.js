@@ -45,10 +45,20 @@ class App extends React.Component {
         })
       }
     } else {
-      this.setState({
-        timer: this.state.break,
-        mode: 'Break',
-      })
+      const audio = document.getElementById('beep');
+      audio.play();
+      if (this.state.mode === 'Session') {
+        this.setState({
+          timer: this.state.break,
+          mode: 'Break',
+        })
+      } else {
+        if (this.state.timer <= 0)
+        this.setState({
+          timer: this.state.session * 60,
+          mode: 'Session',
+        })
+      }
     }
   }
 
@@ -135,6 +145,7 @@ class App extends React.Component {
         <div className="session-time">
           <h2 id="timer-label">{this.state.mode}</h2>
           <span id="time-left">{this.clockify()}</span>
+          <audio id="beep" preload="auto" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
         </div>
         <div className="player">
           <span id="start_stop" onClick={this.play}><i class="fas fa-play"></i><i class="fas fa-pause"></i></span>
