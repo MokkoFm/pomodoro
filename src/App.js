@@ -88,6 +88,9 @@ class App extends React.Component {
       clicked: 0,
       mode: 'Session',
     })
+    const audio = document.getElementById('beep');
+    audio.pause();
+    audio.currentTime = 0;
   }
 
   incrementSession() {
